@@ -1,4 +1,4 @@
-package com.shopmakers.reductionspriveeexamplekotlin
+package com.shopmakers.reductionspriveeexample
 
 import org.junit.Test
 

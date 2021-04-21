@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".MainActivity">
+    tools:context=".KotlinActivity">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txtTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/title"
+        android:text="@string/title_java"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,14 +24,14 @@
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtTitle"
-        app:srcCompat="@drawable/ic_kotlin" />
+        app:srcCompat="@drawable/ic_java" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txtDesc"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="@string/desc"
+        android:text="@string/desc_java"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/imgExample"
         app:layout_constraintTop_toTopOf="@id/imgExample" />
@@ -43,7 +43,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtDesc"
+        app:layout_constraintTop_toBottomOf="@id/imgExample"
         app:tagId="4"
         app:timeout="5" />
 
@@ -52,7 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/desc_more"
+        android:text="@string/desc_more_java"
         app:layout_constraintTop_toBottomOf="@id/advertisementBanner" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -64,4 +64,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtMore" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnKotlin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/open_kotlin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnOverlay" />
 </androidx.constraintlayout.widget.ConstraintLayout>
