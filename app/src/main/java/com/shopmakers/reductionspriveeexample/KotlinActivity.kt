@@ -12,7 +12,7 @@ class KotlinActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kotlin)
         findViewById<AppCompatButton>(R.id.btnOverlay).setOnClickListener {
-            AdvertisementOverlay.newInstance(this, "5", 5)
+            AdvertisementOverlay.newInstance(this, 5, 5)
         }
         findViewById<AppCompatButton>(R.id.btnJava).setOnClickListener {
             openJavaExample()

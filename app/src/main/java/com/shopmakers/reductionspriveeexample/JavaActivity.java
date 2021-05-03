@@ -14,7 +14,7 @@ public class JavaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_java);
         findViewById(R.id.btnOverlay).setOnClickListener(view ->
-                AdvertisementOverlay.Companion.newInstance(this, "5", 5));
+                AdvertisementOverlay.Companion.newInstance(this, 5, 5));
         findViewById(R.id.btnKotlin).setOnClickListener(view -> finish());
     }
 }
