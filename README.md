@@ -16,21 +16,34 @@ Run the project by clicking on run button in Android Studio or Maj + F10
 
 ### Install dependencies
 Add the SDK to your **build.gradle**
-```
+```groovy
 implementation 'com.shopmakers.reductionspriveesdk:advertisementviews:[LAST_VERSION]'
 ```
 
 ## Load an ad
 
+### Listener
+
+AdvertisementListener is an interface for handle the main actions of the views lifecycle
+
+```kotlin
+interface AdvertisementListener {
+    fun adLoadingCompleted(tagID: Int)
+    fun adLoadingFailedWithError(tagID: Int, error: Error?)
+    fun adURLClicked(tagID: Int, uri: Uri?)
+    fun adWasClosed(tagID: Int)
+}
+```
+
 ### Banner Ad View
 
-Instanciate the **com.shopmakers.advertisementviews.banner.view.AdvertisementBanner** in your **activity xml** file.
+Instanciate the **com.shopmakers.advertisementviews.banner.view.AdvertisementBanner** in your **activity xml**/**fragment xml** file.
 
 You can specify the following parameters:
 - tagId: will be provided by our support team
 - timeout: banner load timeout delay in seconds
 
-```
+```xml
 <com.shopmakers.advertisementviews.banner.view.AdvertisementBanner
         android:id="@+id/advertisementBanner"
         android:layout_width="0dp"
@@ -43,6 +56,28 @@ You can specify the following parameters:
         app:timeout="5" />
 ```
 
+You can add listener(AdvertisementListener) for handle events. For example:
+
+```kotlin
+findViewById<AdvertisementBanner>(R.id.webView).setAdvertisementListener(object : AdvertisementListener {
+                   override fun adLoadingCompleted(tagID: Int) {
+                       TODO("Not yet implemented")
+                   }
+                   
+                   override fun adLoadingFailedWithError(tagID: Int, error: Error?) {
+                       TODO("Not yet implemented")
+                   }
+                   
+                   override fun adURLClicked(tagID: Int, uri: Uri) {
+                       TODO("Not yet implemented")
+                   }
+                   
+                   override fun adWasClosed(tagID: Int) {
+                       TODO("Not yet implemented")
+                   }                                                                   
+})
+```
+
 **banner ad view example**
 ![Kotlin banner image example](/images/banner_kotlin_example.png)
 
@@ -51,23 +86,20 @@ You can specify the following parameters:
 Overlay lifecycle is managed from the activity code, after importing the view you will need to instanciate it programmatically.
 
 **Import the view**
-```
+```java
 import com.shopmakers.advertisementviews.overlay.view.AdvertisementOverlay;
 ```
 
 **Call for an overlay**
 
-```
-AdvertisementOverlay.Companion.newInstance(this, "5", 5)
+Note: you can implement AdvertisementListener for class
+
+```kotlin
+AdvertisementOverlay.Companion.newInstance(this, "5", 5, listener = this)
 ```
 
 **overlay ad view example**
 ![Kotlin overlay image example](/images/overlay_kotlin_example.png)
 
-### Ad view handlers
-
-The following handlers will be available in the next version of the sdk:
-- ad loading completed
-- ad loading failed
-- ad clicked
-- ad closed
+### Last version
+Version: 0.0.6
