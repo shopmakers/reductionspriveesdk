@@ -49,15 +49,11 @@ githubProperties.load(new FileInputStream(rootProject.file("github.properties"))
     repositories {
         maven {
             name = "GitHubPackages"
-            /*  Configure path to the library hosted on GitHub Package Registry
-             *  Replace UserID with package owner userID and REPOSITORY with the repository name
-             *  e.g. "https://maven.pkg.github.com/enefce/AndroidLibraryForGitHubPackagesDemo"
-             */
-            url = uri("https://maven.pkg.github.com/UserID/REPOSITORY")
+            url = uri("https://maven.pkg.github.com/shopmakers/reductionspriveesdk")
 
             credentials {
-                username = githubProperties['gpr.usr'] ?: System.getenv("GPR_USER")
-                password = githubProperties['gpr.key'] ?: System.getenv("GPR_API_KEY")
+                username = githubProperties['gpr.user'] 
+                password = githubProperties['gpr.key'] 
             }
         }
     }
@@ -67,8 +63,7 @@ githubProperties.load(new FileInputStream(rootProject.file("github.properties"))
 
 ```gradle
 dependencies {
-    //consume library, e.q. 'com.enefce.libraries.sampleAndroidLib:sampleandroidlib:1.0.5'
-    implementation '<groupId>:<artifactId>:<version>'
+    implementation 'com.shopmakers.reductionspriveesdk:advertisementviews:<version>'
 	...
 }
 ```
