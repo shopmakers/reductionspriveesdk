@@ -18,7 +18,7 @@ Run the project by clicking on run button in Android Studio or Maj + F10
 
 ### Install dependencies
 
-# Step 1: Generate a Personal Access Token for GitHub
+### Step 1: Generate a Personal Access Token for GitHub
 
 - Inside you GitHub account:
     - Settings -> Developer Settings -> Personal Access Tokens -> Generate new token
@@ -26,7 +26,7 @@ Run the project by clicking on run button in Android Studio or Maj + F10
     - After Generating make sure to copy your new personal access token. You won’t be able to see it
       again!
 
-# Step 2: Store your GitHub - Personal Access Token details
+### Step 2: Store your GitHub - Personal Access Token details
 
 - Create a **github.properties** file within your root Android project
 - In case of a public repository make sure you add this file to .gitignore for keep the token
@@ -35,7 +35,7 @@ Run the project by clicking on run button in Android Studio or Maj + F10
     - Replace GITHUB_USERID with personal / organisation Github User ID and PERSONAL_ACCESS_TOKEN
       with the token generated in **#Step 1**
 
-# Step 3 : Update build.gradle inside the application module
+### Step 3 : Update build.gradle inside the application module
 
 - Add the following code to **build.gradle** inside the application module that will be using the
   library published on GitHub Packages Repository
